@@ -1,13 +1,124 @@
 <!DOCTYPE html>
 <html lang="bn">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GameZone Topup</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./App.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameZone TopUp - Gamified Theme</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0b0e14] text-slate-100 font-sans pb-12">
+
+  <!-- 🧭 Navbar -->
+  <nav class="sticky top-0 z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-slate-800 px-4 py-3">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <div class="bg-gradient-to-tr from-violet-600 to-cyan-400 p-2 rounded-xl text-white shadow-[0_0_15px_rgba(139,92,246,0.5)]">
+          🎮
+        </div>
+        <span class="text-xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-cyan-400">
+          GAMEZONE
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-sm">
+          <span>👛 Wallet:</span>
+          <span class="font-semibold text-cyan-300">৳500.00</span>
+        </div>
+        <button class="bg-violet-600 hover:bg-violet-500 text-white text-xs px-3 py-2 rounded-lg font-bold">
+          👤 Login
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 mt-6">
+    
+    <!-- 🖼️ Promo Banner -->
+    <div class="bg-gradient-to-r from-violet-900/40 via-purple-900/20 to-cyan-900/40 border border-violet-500/30 rounded-2xl p-6 mb-6 flex justify-between items-center">
+      <div>
+        <span class="bg-violet-500/20 text-violet-300 text-xs px-3 py-1 rounded-full font-semibold border border-violet-500/30">🔥 SPECIAL OFFER</span>
+        <h2 class="text-2xl font-bold mt-2">Get Extra 10% Diamond Cashback!</h2>
+        <p class="text-slate-400 text-sm mt-1">Pay using Wallet Deposit & get instant reward points.</p>
+      </div>
+      <div class="text-4xl">🎁</div>
+    </div>
+
+    <!-- Step 1: Select Game -->
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 mb-6">
+      <h3 class="text-lg font-semibold mb-4 text-cyan-400">1. Select Game Category</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="cursor-pointer border-violet-500 bg-violet-500/10 shadow-[0_0_15px_rgba(139,92,246,0.2)] border rounded-xl p-4 flex flex-col items-center gap-2">
+          <div class="text-3xl">💎</div>
+          <div class="font-bold">Free Fire</div>
+          <span class="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">Auto Delivery</span>
+        </div>
+        <div class="cursor-pointer border-slate-800 bg-slate-900/40 border rounded-xl p-4 flex flex-col items-center gap-2 hover:border-slate-700">
+          <div class="text-3xl">🔫</div>
+          <div class="font-bold">PUBG Mobile UC</div>
+          <span class="text-xs text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded">Instant API</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Player ID -->
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 mb-6">
+      <h3 class="text-lg font-semibold mb-3 text-cyan-400">2. Enter Player ID (UID)</h3>
+      <input type="text" placeholder="e.g. 123456789" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-violet-500" />
+      <p class="text-xs text-slate-500 mt-2">⚠️ ৩ বারের বেশি ভুল আইডি দিলে অর্ডার বাতিল হবে। ১০ বার ভুলের ক্ষেত্রে অ্যাকাউন্ট পেনাল্টি কাটবে।</p>
+    </div>
+
+    <!-- Step 3: Select Package -->
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 mb-6">
+      <h3 class="text-lg font-semibold mb-4 text-cyan-400">3. Select Recharge Package</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="border-violet-500 bg-violet-500/10 border rounded-xl p-4 relative">
+          <span class="absolute -top-2.5 right-3 bg-gradient-to-r from-violet-600 to-cyan-500 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase text-white">Popular</span>
+          <div class="font-semibold text-slate-200">115 Diamonds</div>
+          <div class="text-xl font-extrabold text-cyan-400 mt-2">৳80</div>
+        </div>
+        <div class="border-slate-800 bg-slate-950/50 border rounded-xl p-4">
+          <div class="font-semibold text-slate-200">240 Diamonds</div>
+          <div class="text-xl font-extrabold text-cyan-400 mt-2">৳160</div>
+        </div>
+        <div class="border-slate-800 bg-slate-950/50 border rounded-xl p-4">
+          <div class="font-semibold text-slate-200">610 Diamonds</div>
+          <div class="text-xl font-extrabold text-cyan-400 mt-2">৳400</div>
+        </div>
+        <div class="border-slate-800 bg-slate-950/50 border rounded-xl p-4">
+          <div class="font-semibold text-slate-200">1240 Diamonds</div>
+          <div class="text-xl font-extrabold text-cyan-400 mt-2">৳800</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: Payment Method -->
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-5">
+      <h3 class="text-lg font-semibold mb-4 text-cyan-400">4. Choose Payment Option</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="border-violet-500 bg-violet-500/10 border rounded-xl p-4 flex items-center justify-between">
+          <div>
+            <div class="font-semibold">Direct Personal bKash</div>
+            <div class="text-xs text-slate-400">Send Money + Auto SMS Verification</div>
+          </div>
+          <span class="text-pink-500 font-bold">bKash</span>
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-950 border border-slate-800 rounded-xl space-y-3 mb-4">
+        <p class="text-xs text-slate-300">
+          Send Money to: <span class="font-mono text-cyan-400 bg-slate-900 px-2 py-0.5 rounded">017XXXXXXXX</span> (Personal)
+        </p>
+        <input type="text" placeholder="Enter bKash Transaction ID (TrxID)" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-100" />
+      </div>
+
+      <button class="w-full bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-bold py-3.5 rounded-xl shadow-[0_0_20px_rgba(139,92,246,0.4)]">
+        Pay & Instant Order Now ⚡
+      </button>
+    </div>
+
+  </div>
+
+</body>
 </html>
