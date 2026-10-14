@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameZone TopUp - Live Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-gaming { font-family: 'Orbitron', sans-serif; }
+    .neon-border-violet { box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); }
+    .neon-border-cyan { box-shadow: 0 0 15px rgba(6, 182, 212, 0.4); }
+  </style>
+</head>
+<body class="bg-[#07090e] text-slate-100 min-h-screen pb-16 selection:bg-violet-500 selection:text-white">
+  <nav class="sticky top-0 z-50 bg-[#0c1017]/90 backdrop-blur-md border-b border-slate-800/80 px-4 py-3">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 via-indigo-500 to-cyan-400 p-0.5 shadow-[0_0_20px_rgba(139,92,246,0.5)]">
+          <div class="w-full h-full bg-[#07090e] rounded-[10px] flex items-center justify-center font-gaming text-lg text-cyan-400 font-extrabold">GZ</div>
+        </div>
+        <div>
+          <span class="font-gaming text-xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-indigo-300 to-cyan-400">GAMEZONE</span>
+          <span class="block text-[10px] tracking-widest text-slate-400 uppercase font-bold -mt-1">Official TopUp Store</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 bg-slate-900/90 border border-slate-800 px-3 py-1.5 rounded-xl">
+          <span class="text-xs text-slate-400">Wallet:</span>
+          <span class="font-bold text-cyan-400 text-sm">৳500.00</span>
+        </div>
+        <button type="button" class="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs px-4 py-2 rounded-xl font-bold shadow-lg shadow-violet-600/30 transition">My Account</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 mt-6">
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-violet-950 via-slate-900 to-cyan-950 border border-violet-500/30 p-6 md:p-8 mb-8 shadow-2xl">
+      <div class="relative z-10 max-w-lg">
+        <span class="inline-flex items-center gap-1.5 bg-violet-500/20 text-violet-300 text-xs px-3 py-1 rounded-full font-semibold border border-violet-500/40 mb-3">⚡ AUTOMATED DIRECT TOP-UP</span>
+        <h1 class="text-2xl md:text-3xl font-black font-gaming tracking-wide text-white mb-2">INSTANT <span class="text-cyan-400">UID TOPUP</span> & PASSES</h1>
+        <p class="text-slate-400 text-sm leading-relaxed mb-1">সঠিক Player ID দিন, নাম ভেরিফাই করুন এবং সর্বনিম্ন দামে ডায়মন্ড, সাপ্তাহিক/মাসিক মেম্বারশিপ এবং UC ক্রয় করুন।</p>
+      </div>
+    </section>
+
+    <section class="bg-[#0c1017]/80 border border-slate-800/80 rounded-2xl p-6 mb-8 backdrop-blur-sm">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold text-sm border border-violet-500/30">1</span>
+        <h2 class="text-lg font-bold text-white font-gaming">SELECT GAME</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <button id="game-ff" type="button" onclick="switchGame('ff')" class="text-left cursor-pointer relative overflow-hidden rounded-2xl border-2 border-violet-500 bg-gradient-to-b from-violet-950/40 to-slate-950 p-4 transition-all duration-300 neon-border-violet">
+          <span class="flex items-center gap-4">
+            <span class="w-16 h-16 rounded-xl overflow-hidden bg-slate-800 flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="https://upload.wikimedia.org/wikipedia/en/a/a2/Garena_Free_Fire_cover.jpg" alt="Free Fire" class="w-full h-full object-cover">
+            </span>
+            <span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold px-2.5 py-0.5 rounded-full uppercase">Instant Auto</span>
+              <span class="block text-lg font-bold font-gaming text-white mt-1">Garena Free Fire</span>
+              <span class="block text-xs text-slate-400 mt-0.5">UID Diamonds, Weekly & Monthly Passes</span>
+            </span>
+          </span>
+        </button>
+        <button id="game-pubg" type="button" onclick="switchGame('pubg')" class="text-left cursor-pointer relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/60 to-slate-950 p-4 hover:border-slate-700 transition-all duration-300 opacity-60">
+          <span class="flex items-center gap-4">
+            <span class="w-16 h-16 rounded-xl overflow-hidden bg-slate-800 flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/PUBG_Mobile_simple_logo_black.png" alt="PUBG Mobile" class="w-full h-full object-contain p-2 bg-slate-900">
+            </span>
+            <span>
+              <span class="text-[10px] bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-bold px-2.5 py-0.5 rounded-full uppercase">API Ready</span>
+              <span class="block text-lg font-bold font-gaming text-white mt-1">PUBG Mobile UC</span>
+              <span class="block text-xs text-slate-400 mt-0.5">Global UC Top-Up & Prime Plus</span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="bg-[#0c1017]/80 border border-slate-800/80 rounded-2xl p-6 mb-8 backdrop-blur-sm">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-8 rounded-lg bg-cyan-600/20 text-cyan-400 flex items-center justify-center font-bold text-sm border border-cyan-500/30">2</span>
+        <h2 class="text-lg font-bold text-white font-gaming">ENTER PLAYER ID & VERIFY</h2>
+      </div>
+      <div class="max-w-xl">
+        <label for="player-uid" class="block text-xs text-slate-400 mb-2">আপনার গেমের সঠিক Player ID (UID) দিন:</label>
+        <div class="flex gap-2">
+          <input type="text" id="player-uid" inputmode="numeric" autocomplete="off" placeholder="যেমন: 123456789" class="w-full min-w-0 bg-[#07090e] border border-slate-800 rounded-xl px-4 py-3 text-slate-100 font-mono focus:outline-none focus:border-violet-500 transition shadow-inner">
+          <button type="button" onclick="verifyPlayerId()" class="bg-violet-600 hover:bg-violet-500 text-white text-xs px-5 py-3 rounded-xl font-bold transition whitespace-nowrap shadow-lg shadow-violet-600/30">Verify ID 🔍</button>
+        </div>
+        <div id="verification-result" class="hidden mt-3 p-3 bg-emerald-950/40 border border-emerald-500/40 rounded-xl items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 text-sm">Demo ID:</span>
+            <span id="player-name-display" class="font-bold text-white font-mono text-sm"></span>
+          </div>
+          <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold uppercase">Not verified</span>
+        </div>
+        <p class="text-xs text-amber-400/90 mt-2.5 flex items-center gap-1.5"><span>⚠️</span> ভুল ID দিলে অন্যের অ্যাকাউন্টে টপ-আপ হতে পারে। অর্ডার করার আগে ID যাচাই করুন।</p>
+      </div>
+    </section>
+
+    <section class="bg-[#0c1017]/80 border border-slate-800/80 rounded-2xl p-6 mb-8 backdrop-blur-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold text-sm border border-violet-500/30">3</span>
+          <h2 id="package-section-title" class="text-lg font-bold text-white font-gaming">FREE FIRE PACKAGES</h2>
+        </div>
+      </div>
+      <div id="ff-packages-container" class="space-y-6">
+        <div>
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">💎 In-Game Diamonds</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <button type="button" onclick="selectPack(this, '25 Diamonds', 20)" data-pack-name="25 Diamonds" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="block text-2xl mb-1">💎</span><span class="block font-bold text-white text-sm">25 Diamonds</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳20.00</span></button>
+            <button type="button" onclick="selectPack(this, '115 Diamonds', 80)" data-pack-name="115 Diamonds" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border-2 border-violet-500 rounded-2xl p-4 transition-all duration-200 neon-border-violet"><span class="absolute -top-2.5 right-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase">Popular</span><span class="block text-2xl mb-1">💎</span><span class="block font-bold text-white text-sm">115 Diamonds</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳80.00</span></button>
+            <button type="button" onclick="selectPack(this, '240 Diamonds', 160)" data-pack-name="240 Diamonds" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="block text-2xl mb-1">💎</span><span class="block font-bold text-white text-sm">240 Diamonds</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳160.00</span></button>
+            <button type="button" onclick="selectPack(this, '610 Diamonds', 400)" data-pack-name="610 Diamonds" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="block text-2xl mb-1">💎</span><span class="block font-bold text-white text-sm">610 Diamonds</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳400.00</span></button>
+            <button type="button" onclick="selectPack(this, '1240 Diamonds', 800)" data-pack-name="1240 Diamonds" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="block text-2xl mb-1">💎</span><span class="block font-bold text-white text-sm">1240 Diamonds</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳800.00</span></button>
+            <button type="button" onclick="selectPack(this, '2530 Diamonds', 1600)" data-pack-name="2530 Diamonds" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="absolute -top-2.5 right-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase">Best Value</span><span class="block text-2xl mb-1">💎</span><span class="block font-bold text-white text-sm">2530 Diamonds</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳1600.00</span></button>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">📜 Memberships & Passes</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <button type="button" onclick="selectPack(this, 'Weekly Membership', 170)" data-pack-name="Weekly Membership" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="block text-2xl mb-1">📅</span><span class="block font-bold text-white text-sm">Weekly Membership</span><span class="block text-xs text-slate-400 mt-1">450 Diamonds Total Value</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳170.00</span></button>
+            <button type="button" onclick="selectPack(this, 'Monthly Membership', 780)" data-pack-name="Monthly Membership" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="block text-2xl mb-1">👑</span><span class="block font-bold text-white text-sm">Monthly Membership</span><span class="block text-xs text-slate-400 mt-1">2600 Diamonds Total Value</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳780.00</span></button>
+            <button type="button" onclick="selectPack(this, 'Level Up Pass', 190)" data-pack-name="Level Up Pass" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-violet-500"><span class="block text-2xl mb-1">📈</span><span class="block font-bold text-white text-sm">Level Up Pass</span><span class="block text-xs text-slate-400 mt-1">802 Diamonds Claim Pass</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳190.00</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="pubg-packages-container" class="hidden space-y-6">
+        <div>
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">🔫 PUBG Mobile UC Packs</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <button type="button" onclick="selectPack(this, '60 UC', 95)" data-pack-name="60 UC" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border-2 border-cyan-500 rounded-2xl p-4 transition-all duration-200 neon-border-cyan"><span class="block text-2xl mb-1">🔫</span><span class="block font-bold text-white text-sm">60 UC</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳95.00</span></button>
+            <button type="button" onclick="selectPack(this, '325 UC', 450)" data-pack-name="325 UC" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-cyan-500"><span class="block text-2xl mb-1">🔫</span><span class="block font-bold text-white text-sm">325 UC</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳450.00</span></button>
+            <button type="button" onclick="selectPack(this, '660 UC', 890)" data-pack-name="660 UC" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-cyan-500"><span class="block text-2xl mb-1">🔫</span><span class="block font-bold text-white text-sm">660 UC</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳890.00</span></button>
+            <button type="button" onclick="selectPack(this, '1800 UC', 2400)" data-pack-name="1800 UC" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-cyan-500"><span class="block text-2xl mb-1">🔫</span><span class="block font-bold text-white text-sm">1800 UC</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳2400.00</span></button>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">👑 PUBG Prime Subscriptions</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <button type="button" onclick="selectPack(this, 'PUBG Prime', 110)" data-pack-name="PUBG Prime" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-cyan-500"><span class="block text-2xl mb-1">🎖️</span><span class="block font-bold text-white text-sm">PUBG Prime</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳110.00</span></button>
+            <button type="button" onclick="selectPack(this, 'PUBG Prime Plus', 850)" data-pack-name="PUBG Prime Plus" class="pack-card text-left cursor-pointer relative bg-gradient-to-b from-slate-900 to-[#07090e] border border-slate-800 rounded-2xl p-4 transition-all duration-200 hover:border-cyan-500"><span class="block text-2xl mb-1">🌟</span><span class="block font-bold text-white text-sm">PUBG Prime Plus</span><span class="block text-cyan-400 font-gaming font-extrabold text-base mt-2">৳850.00</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#0c1017]/80 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-sm">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-lg bg-pink-600/20 text-pink-400 flex items-center justify-center font-bold text-sm border border-pink-500/30">4</span>
+        <h2 class="text-lg font-bold text-white font-gaming">CONTACT & PAYMENT DETAILS</h2>
+      </div>
+      <div class="max-w-xl space-y-4">
+        <div>
+          <label for="customer-phone" class="block text-xs text-slate-400 mb-1.5">আপনার মোবাইল নম্বর:</label>
+          <input type="tel" id="customer-phone" autocomplete="tel" placeholder="যেমন: 01700000000" class="w-full bg-[#07090e] border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 font-mono focus:outline-none focus:border-pink-500">
+        </div>
+        <div class="p-4 bg-[#07090e] border border-slate-800 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between bg-slate-900 p-3 rounded-xl border border-slate-800">
+            <span class="text-xs text-slate-300">bKash Send Money Number:</span>
+            <span class="font-mono text-cyan-400 font-bold">017XXXXXXXX</span>
+          </div>
+          <div>
+            <label for="trx-id" class="block text-xs text-slate-400 mb-1.5">bKash Transaction ID (TrxID) দিন:</label>
+            <input type="text" id="trx-id" autocomplete="off" placeholder="যেমন: BK89237492" class="w-full bg-[#0c1017] border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 font-mono uppercase focus:outline-none focus:border-pink-500">
+          </div>
+        </div>
+        <button type="button" onclick="submitOrder()" id="pay-button" class="w-full mt-4 bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-gaming font-extrabold py-4 rounded-2xl shadow-[0_0_25px_rgba(139,92,246,0.4)] transition duration-300 tracking-wider">PAY & CONFIRM ORDER (115 Diamonds - ৳80.00) ⚡</button>
+        <p class="text-xs text-amber-300/90">ডেমো প্রিভিউ: এখানে আসল পেমেন্ট, Player ID verification বা top-up সম্পন্ন হয় না।</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let activeGame = 'ff';
+    let selectedPackageName = '115 Diamonds';
+    let selectedPackagePrice = 80;
+
+    function switchGame(type) {
+      const ffCard = document.getElementById('game-ff');
+      const pubgCard = document.getElementById('game-pubg');
+      const ffContainer = document.getElementById('ff-packages-container');
+      const pubgContainer = document.getElementById('pubg-packages-container');
+      const title = document.getElementById('package-section-title');
+
+      activeGame = type;
+      if (type === 'ff') {
+        ffCard.className = 'text-left cursor-pointer relative overflow-hidden rounded-2xl border-2 border-violet-500 bg-gradient-to-b from-violet-950/40 to-slate-950 p-4 transition-all duration-300 neon-border-violet';
+        pubgCard.className = 'text-left cursor-pointer relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/60 to-slate-950 p-4 hover:border-slate-700 transition-all duration-300 opacity-60';
+        ffContainer.classList.remove('hidden');
+        pubgContainer.classList.add('hidden');
+        title.textContent = 'FREE FIRE PACKAGES';
+        selectPack(ffContainer.querySelector('[data-pack-name="115 Diamonds"]'), '115 Diamonds', 80);
+      } else {
+        pubgCard.className = 'text-left cursor-pointer relative overflow-hidden rounded-2xl border-2 border-cyan-500 bg-gradient-to-b from-cyan-950/40 to-slate-950 p-4 transition-all duration-300 neon-border-cyan';
+        ffCard.className = 'text-left cursor-pointer relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/60 to-slate-950 p-4 hover:border-slate-700 transition-all duration-300 opacity-60';
+        pubgContainer.classList.remove('hidden');
+        ffContainer.classList.add('hidden');
+        title.textContent = 'PUBG MOBILE PACKAGES';
+        selectPack(pubgContainer.querySelector('[data-pack-name="60 UC"]'), '60 UC', 95);
+      }
+    }
+
+    function verifyPlayerId() {
+      const uid = document.getElementById('player-uid').value.trim();
+      if (!uid) {
+        alert('অনুগ্রহ করে আগে Player ID ইনপুট দিন!');
+        return;
+      }
+
+      document.getElementById('player-name-display').textContent = `Demo ID ending ${uid.slice(-4)}`;
+      document.getElementById('verification-result').classList.remove('hidden');
+      document.getElementById('verification-result').classList.add('flex');
+    }
+
+    function selectPack(element, packName, price) {
+      if (!element) return;
+
+      document.querySelectorAll('.pack-card').forEach((card) => {
+        card.classList.remove('border-2', 'border-violet-500', 'border-cyan-500', 'neon-border-violet', 'neon-border-cyan');
+        card.classList.add('border', 'border-slate-800');
+      });
+
+      const accent = activeGame === 'pubg' ? 'cyan' : 'violet';
+      element.classList.remove('border', 'border-slate-800');
+      element.classList.add('border-2', `border-${accent}-500`, `neon-border-${accent}`);
+      selectedPackageName = packName;
+      selectedPackagePrice = price;
+      document.getElementById('pay-button').textContent = `PAY & CONFIRM ORDER (${packName} - ৳${price}.00) ⚡`;
+    }
+
+    function submitOrder() {
+      const uid = document.getElementById('player-uid').value.trim();
+      const phone = document.getElementById('customer-phone').value.trim();
+      const trxId = document.getElementById('trx-id').value.trim();
+
+      if (!uid) {
+        alert('অনুগ্রহ করে Player ID লিখুন!');
+        return;
+      }
+      if (!phone) {
+        alert('অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন!');
+        return;
+      }
+      if (!trxId) {
+        alert('অনুগ্রহ করে বিকাশ Transaction ID (TrxID) লিখুন!');
+        return;
+      }
+
+      alert(`ডেমো অর্ডার যাচাই সম্পন্ন। কোনো পেমেন্ট বা top-up করা হয়নি।\n\nপ্যাকেজ: ${selectedPackageName}\nমূল্য: ৳${selectedPackagePrice}\nPlayer ID: ${uid}\nফোন: ${phone}\nTrxID: ${trxId}`);
+    }
+  </script>
+</body>
+</html>
