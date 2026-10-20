@@ -95,7 +95,7 @@
       <div class="max-w-xl">
         <label for="player-uid" class="block text-xs text-slate-400 mb-2">আপনার গেমের সঠিক Player ID (UID) দিন:</label>
         <div class="flex gap-2">
-          <input type="text" id="player-uid" inputmode="numeric" autocomplete="off" placeholder="যেমন: 123456789" class="w-full min-w-0 bg-[#07090e] border-2 border-slate-800 rounded-xl px-4 py-3 text-slate-100 font-mono focus:outline-none focus:border-violet-500 transition shadow-inner">
+          <input type="text" id="player-uid" inputmode="numeric" autocomplete="off" oninput="clearVerification()" placeholder="যেমন: 123456789" class="w-full min-w-0 bg-[#07090e] border-2 border-slate-800 rounded-xl px-4 py-3 text-slate-100 font-mono focus:outline-none focus:border-violet-500 transition shadow-inner">
           <button type="button" onclick="verifyPlayerId()" class="bg-violet-600 hover:bg-violet-500 text-white text-xs px-5 py-3 rounded-xl font-bold transition whitespace-nowrap shadow-lg shadow-violet-600/30">Verify ID 🔍</button>
         </div>
         <div id="verification-result" class="hidden mt-3 p-3 bg-emerald-950/40 border border-emerald-500/40 rounded-xl items-center justify-between gap-2">
@@ -229,13 +229,26 @@
     function verifyPlayerId() {
       const uid = document.getElementById('player-uid').value.trim();
       if (!uid) {
+        clearVerification();
         alert('অনুগ্রহ করে আগে Player ID ইনপুট দিন!');
+        return;
+      }
+      if (!/^\d+$/.test(uid)) {
+        clearVerification();
+        alert('Player ID-তে শুধু সংখ্যা ব্যবহার করুন!');
         return;
       }
 
       document.getElementById('player-name-display').textContent = `Demo ID ending ${uid.slice(-4)}`;
       document.getElementById('verification-result').classList.remove('hidden');
       document.getElementById('verification-result').classList.add('flex');
+    }
+
+    function clearVerification() {
+      const result = document.getElementById('verification-result');
+      result.classList.add('hidden');
+      result.classList.remove('flex');
+      document.getElementById('player-name-display').textContent = '';
     }
 
     function selectPack(element, packName, price) {
@@ -263,8 +276,16 @@
         alert('অনুগ্রহ করে Player ID লিখুন!');
         return;
       }
+      if (!/^\d+$/.test(uid)) {
+        alert('Player ID-তে শুধু সংখ্যা ব্যবহার করুন!');
+        return;
+      }
       if (!phone) {
         alert('অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন!');
+        return;
+      }
+      if (!/^(?:01[3-9]\d{8}|\+?8801[3-9]\d{8})$/.test(phone)) {
+        alert('সঠিক বাংলাদেশি মোবাইল নম্বর দিন (যেমন: 01700000000)!');
         return;
       }
       if (!trxId) {
