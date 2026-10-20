@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GameZone TopUp - Live Store</title>
+  <title>GameZone TopUp - Demo Store</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -172,6 +172,19 @@
         <h2 class="text-lg font-bold text-white font-gaming">CONTACT & PAYMENT DETAILS</h2>
       </div>
       <div class="max-w-xl space-y-4">
+        <div class="bg-[#07090e] border border-pink-500/40 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg shadow-pink-500/10">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-pink-600/20 text-pink-400 border border-pink-500/30 flex items-center justify-center font-bold text-lg" aria-hidden="true">💸</div>
+            <div>
+              <span class="text-xs text-slate-400 block font-semibold">bKash নমুনা নম্বর (ডেমো):</span>
+              <span id="bkash-num" class="text-lg font-extrabold font-mono text-pink-400 tracking-wider">01700000000</span>
+            </div>
+          </div>
+          <button type="button" onclick="copyBkashNumber()" class="w-full sm:w-auto bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 border border-pink-500/40 text-xs px-4 py-2.5 rounded-xl font-bold transition flex items-center justify-center gap-1.5 active:scale-95">
+            📋 <span id="copy-btn-text">নম্বর কপি</span>
+          </button>
+        </div>
+        <p id="copy-status" role="status" aria-live="polite" class="text-xs text-amber-300">এটি একটি নমুনা নম্বর—আসল পেমেন্টের আগে আপনার নিজস্ব নম্বর দিয়ে বদলান।</p>
         <div class="p-4 bg-[#07090e] border-2 border-pink-500/30 rounded-2xl space-y-3">
           <label for="trx-id" class="block text-xs text-slate-300 font-semibold">bKash Transaction ID (TrxID) দিন:</label>
           <input type="text" id="trx-id" autocomplete="off" placeholder="যেমন: BK89237492" class="w-full bg-[#0c1017] border border-slate-800 rounded-xl px-4 py-3.5 text-sm text-slate-100 font-mono uppercase focus:outline-none focus:border-pink-500 transition shadow-inner">
@@ -315,6 +328,21 @@
         input.value = '';
       });
       authFeedback.textContent = 'এই ডেমোতে লগইন বা অ্যাকাউন্ট তৈরি হয় না। চালু করতে নিরাপদ ব্যাকএন্ড authentication যুক্ত করুন।';
+    }
+
+    async function copyBkashNumber() {
+      const number = document.getElementById('bkash-num').textContent.trim();
+      const status = document.getElementById('copy-status');
+      const buttonText = document.getElementById('copy-btn-text');
+
+      try {
+        await navigator.clipboard.writeText(number);
+        status.textContent = 'নমুনা নম্বরটি কপি হয়েছে। পেমেন্ট পাঠানোর আগে সঠিক প্রাপকের নম্বর নিশ্চিত করুন।';
+        buttonText.textContent = 'কপি হয়েছে ✅';
+      } catch (error) {
+        status.textContent = 'নম্বর কপি করা যায়নি। অনুগ্রহ করে নম্বরটি হাতে কপি করুন।';
+        buttonText.textContent = 'কপি হয়নি';
+      }
     }
 
     document.getElementById('form-login').addEventListener('submit', showDemoAuthMessage);
